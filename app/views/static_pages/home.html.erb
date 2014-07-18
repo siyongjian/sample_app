@@ -1,14 +1,22 @@
 <!--% provide(:title, 'Home') %-->
 
   <div class="center hero-unit">
-    <h1>Welcome to the Sample App</h1>
+    
+	<h1>Welcome to LingoTidbits! </h1>
+	 <%= link_to image_tag("world_languages.jpg", alt: "world_languages", size: "500x240", style: "float:center", id: "banner"), 'http://www.facebook.com/yongjian.si/' %>
 
-    <h2>
-      This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
+    <h2>“If you talk to a man in a language he understands, that goes to his head.  If you talk to him in his language, that goes to his heart.”
 
+‒Nelson Mandela</h2>
+	
+	<!--
+	<h2>
+      Yongjian Si is a student at <%=link_to "Stanford University", 	'http://www.stanford.edu/' %></h2>
+	  
+      <h2>He major is  <%=link_to "Symbolic Systems",'http://symsys.stanford.edu'%></h2>
+	  <h2>Learn more about <%= link_to "Yongjian",    about_path %></h2>
+ 
+-->
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
   </div>
 
