@@ -14,6 +14,7 @@ describe User do
   it { should respond_to(:name) }
   it { should respond_to(:email) }
   it { should respond_to(:password_digest)}
+  it { should respond_to(:mother_tongue)}
 
   it { should be_valid }
   
@@ -29,6 +30,11 @@ describe User do
       it { should_not be_valid }
     end
     
+    
+    describe "when mother_language is not present" do
+      before {@user.mother_tongue = " " }
+      it { should_not be_valid}
+    end 
     describe "when name is too long" do
        before { @user.name = "a" * 51 }
        it { should_not be_valid }
