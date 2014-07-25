@@ -19,6 +19,7 @@ describe User do
   it { should be_valid }
   
   it { should respond_to(:authenticate) }
+  it { should respond_to(:remember_token)}
   
 
   describe "when name is not present" do
@@ -77,6 +78,15 @@ describe User do
        @user = User.new(name: "Example User", email: "user@example.com",
                         password: " ", password_confirmation: " ")
      end
+     
+     
+     subject { @user }
+     describe "remember token" do
+        before { @user.save }
+        its(:remember_token) { should_not be_blank }
+      end
+     
+     
      it { should_not be_valid }
    end
   
